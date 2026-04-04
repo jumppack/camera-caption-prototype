@@ -39,4 +39,12 @@ Once the development server is running and displaying a QR code in your terminal
 5. If at any point you deny permissions, you can restart the app and click the "Grant Permission" fallback button.
 
 ## Architecture & History
-The system's design phase and evolving implementation plans are recorded in the `ai_brain/` directory to maintain a strict historical record of how the application is built over time.
+
+The application is built upon a **Feature-Based Domain Architecture** strictly utilizing **TypeScript** (`src/features/camera/`). The system's design phase and evolving implementation plans are recorded in the `ai_brain/` directory to maintain a strict historical record of how the application is built over time.
+
+### Future Engineering Principles
+As this project scales into a production application, we are targeting strict metrics to guarantee software quality:
+
+- **Scalability**: Continuing the Feature-Based layout prevents tangled dependencies. Global states will be avoided in favor of modular React hooks, allowing the camera layer to scale infinitely with custom filters and effects wrappers.
+- **Robustness**: Strict TypeScript compilation (`strict: true`) acts as our first line of defense. Component contracts are strictly defined to eradicate runtime prop anomalies.
+- **Security**: Upcoming network interactions (backend Vision AI and cloud captioning) will restrict all tokens to `.env` variables that are entirely excluded from git trees. No secure processing occurs client-side outside of protected native conduits.
