@@ -1,7 +1,13 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import { PermissionResponse } from 'expo-camera';
 
-export default function PermissionScreen({ permission, requestPermission }) {
+type PermissionScreenProps = {
+  permission: PermissionResponse | null;
+  requestPermission: () => void;
+};
+
+export default function PermissionScreen({ permission, requestPermission }: PermissionScreenProps) {
   if (!permission) {
     return (
       <View style={styles.container}>

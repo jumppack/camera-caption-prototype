@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { CameraView } from 'expo-camera';
+import { CameraView, CameraType } from 'expo-camera';
 import CameraControls from '../components/CameraControls';
 
 export default function CameraScreen() {
-  const [facing, setFacing] = useState('back');
+  const [facing, setFacing] = useState<CameraType>('back');
 
   function toggleCameraFacing() {
     setFacing(current => (current === 'back' ? 'front' : 'back'));

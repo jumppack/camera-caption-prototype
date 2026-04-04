@@ -1,7 +1,11 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-export default function CameraControls({ toggleCameraFacing }) {
+type CameraControlsProps = {
+  toggleCameraFacing: () => void;
+};
+
+export default function CameraControls({ toggleCameraFacing }: CameraControlsProps) {
   return (
     <View style={styles.buttonContainer}>
       <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
