@@ -2,12 +2,18 @@ import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 type CameraControlsProps = {
+  // Callback function to switch between front and back camera lenses
   toggleCameraFacing: () => void;
 };
 
+/**
+ * Overlay component for camera controls.
+ * Displays interactive buttons on top of the live camera feed.
+ */
 export default function CameraControls({ toggleCameraFacing }: CameraControlsProps) {
   return (
     <View style={styles.buttonContainer}>
+      {/* Button to flip active lens */}
       <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
         <Text style={styles.text}>Flip Camera</Text>
       </TouchableOpacity>
